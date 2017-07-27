@@ -45,14 +45,14 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 				this.showHelp();
 			}else{
 				$('#' + this.id + '-shosu').attr('checked', true);
-				$('#' + this.id + 'wfa-wrap').show()
-				$('#' + this.id + ' .wfa-help').hide();
+				$('#' + this.id + 'car-wrap').show()
+				$('#' + this.id + ' .car-help').hide();
 			}	
 			this.open = "yes";
 		},
 		showHelp: function(h){
-			$('#' + this.id + ' .wfa-wrap').hide()
-			$('#' + this.id + ' .wfa-help').show()
+			$('#' + this.id + ' .car-wrap').hide()
+			$('#' + this.id + ' .car-help').show()
 			this.clicks.updateAccord(this);			
 				
 			// Show this help on startup anymore, after the first time 
@@ -80,21 +80,21 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 					}
 				}));	
 				// Git ids of checked checkboxes above sliders
-				// $.each( $('#' + this.id + 'wfa-wrap .-slCb'),lang.hitch(this,function(i,v){
+				// $.each( $('#' + this.id + 'car-wrap .-slCb'),lang.hitch(this,function(i,v){
 				// 	if (v.checked == true){
 				// 		var id = "-" + v.id.split('-').pop();
 				// 		this.obj.slCbIds.push(id)
 				// 	}
 				// }))
 				// // Get ids of checked radio buttons
-				// $.each( $('#' + this.id + ' .wfa-radio-indent input'),lang.hitch(this,function(i,v){
+				// $.each( $('#' + this.id + ' .car-radio-indent input'),lang.hitch(this,function(i,v){
 				// 	if (v.checked == true){
 				// 		var id = "-" + v.id.split('-').pop();
 				// 		this.obj.rbIds.push(id)
 				// 	}
 				// }));	
 				// // Get ids of checked checkboxes above radio buttons
-				// $.each( $('#' + this.id + 'wfa-wrap .rb_cb'),lang.hitch(this,function(i,v){
+				// $.each( $('#' + this.id + 'car-wrap .rb_cb'),lang.hitch(this,function(i,v){
 				// 	if (v.checked == true){
 				// 		var id = "-" + v.id.split('-').pop();
 				// 		this.obj.rbCbIds.push(id)
@@ -149,7 +149,7 @@ function ( 	declare, PluginBase, ContentPane, dom, domStyle, domGeom, obj, conte
 			this.basinDiv = new ContentPane({style:'padding:0; padding-left:5px; padding-right:5px; color:#FFF; background-color:#21658c; font-size: 17px; opacity: 0.9; margin-right:145px; flex:1; z-index:1000; position: absolute; top: 27px; left: 50%; text-align:center; border-radius:1px; -moz-box-shadow:0 1px 2px rgba(0,0,0,0.5); -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.5); box-shadow: 0 1px 2px rgba(0,0,0,0.5); }'});
 			this.basinId = this.basinDiv.id;
 			dom.byId('map-0').appendChild(this.basinDiv.domNode);
-			$('#' + this.basinId).html('<div class="wfa_basinText" id="basinMapText"></div>');
+			$('#' + this.basinId).html('<div class="car_basinText" id="basinMapText"></div>');
 
 			// Set up variables
 			// Create ESRI objects and event listeners	

@@ -33,17 +33,17 @@ hr{
 .sidebar-content .getHelpBtnWrap .button{
 	margin-bottom:0;
 }
-.wfa-wrap .slider{
+.car-wrap .slider{
 	margin-left:30px;
 }
-.wfa-wrap{
+.car-wrap{
 	display: none;
 }
-.wfa-sections{
+.car-sections{
 	position: relative; top: -10px; padding: 10px;
 }
 
-.wfa-first-section .toggle-btn{
+.car-first-section .toggle-btn{
 	margin-top:-10px;	
 }
 .under{
@@ -53,104 +53,104 @@ hr{
 .sidebar-content{
 	height:auto !important;
 }
-.wfa-count-font{
+.car-count-font{
 	color:#2f6384; text-align:center; margin-top:-5px; margin-bottom:-10px;
 }
 .slider-container .ui-state-disabled {
     cursor: not-allowed !important;
 }
-.wfa-slider-label{
+.car-slider-label{
 	display:none; margin-left:-8px;
 }
-.wfa-radio-indent{
+.car-radio-indent{
 	margin-left:22px;
 }
-.wfa-grth{
+.car-grth{
 	display:none; color: #2f6384; font-weight: 700;
 }
-.wfa-shosu{
+.car-shosu{
 	position:absolute; top:94px; right:3px;
 }
 /* HUC dropdown styling area ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.wfa-huc8Chosen, .wfa-huc10Chosen, .wfa-huc12Chosen{
+.car-huc8Chosen, .car-huc10Chosen, .car-huc12Chosen{
 	display: none;
 }
-/*.wfa-huc6Text, .wfa-huc8Text, .wfa-huc10Text, .wfa-huc12Text{
+/*.car-huc6Text, .car-huc8Text, .car-huc10Text, .car-huc12Text{
 	display: none;
 }*/
-.wfa-hucSelText{
+.car-hucSelText{
 	margin: 10px;
 }
-.wfa-backBtn{
+.car-backBtn{
 	cursor: pointer; color: #2F6384;
 }
 /* Attribute wrap styling for select a site /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.wfa-fas_AttributeWrap{
+.car-fas_AttributeWrap{
 	margin-top: 0px; display: flex; flex-wrap: wrap; padding-bottom: 20px;
 }
-.wfa-fas_AttributeWrap div{
+.car-fas_AttributeWrap div{
 	padding: 3px; line-height: 22px;
 }
-.wfa-watershedHoverText{
+.car-watershedHoverText{
 	font-size: 15px; font-weight: 900; color: #101d28; margin-top: 40px; text-align: center;
 }
-.wfa-sum-wrap {
+.car-sum-wrap {
     width: 380px; margin: 3px; border: 1pt solid #cdd5d5; padding: 5px; box-shadow: 0 1px 1px rgba(16,22,26,.2); position: relative; display: flex;
 }
-.wfa-huc-wrap{
+.car-huc-wrap{
 	width: 300px; margin: 3px; border: 1pt solid #cdd5d5; padding: 5px; box-shadow: 0 1px 1px rgba(16,22,26,.2); position: relative;
 }
-.wfa-attributePatch{
+.car-attributePatch{
 	height: 28px; width: 28px; background-color: red; margin-right: 5px; border: 1pt solid #cdd5d5; box-shadow: 0 1px 1px rgba(16,22,26,.2);
 }
 .s2Atts{
 	font-size: 14px; color: #2f6384; font-weight: bold;
 }
-.wfa-hucSelWrap{
+.car-hucSelWrap{
 	font-size: 15px; margin-right: 8px; border-radius: 5px; padding-left: 3px;
 }
-.wfa-hucSelWrap:hover{
+.car-hucSelWrap:hover{
 	background-color: #F3F3F3; cursor: pointer;
 }
-.wfa-hucZoom{
+.car-hucZoom{
 	color: blue; right: 7px; margin-right: 8px;
 }
-.wfa-textZoom{
+.car-textZoom{
 	color: black;
 }
-.wfa-funcLabel{
+.car-funcLabel{
 	margin-bottom: 7px !important;
 }
 .tabBtns{
 	margin-right:-6px; margin-bottom:0 !important; background:#f3f3f3; border-bottom: 1px solid #cdd5d5 !important; border-top: 1px solid #cdd5d5 !important;
 }
-.wfa-funcWrapper{
+.car-funcWrapper{
 	margin-top: 20px; position: relative; display: flex; width:375px;
 }
-.wfa-func_radioGroups{
+.car-func_radioGroups{
 	flex: 1; width: 190px;
 }
-.wfa-app{
+.car-app{
 	background: #fff; position: absolute; z-index: 1000; width: 420;
 }
-.wfa-mainContentWrap{
+.car-mainContentWrap{
 	position: relative; top: 10px; padding-left: 7px;
 }
-.wfa-dlwrap a {
+.car-dlwrap a {
 	color: blue !important; cursor: pointer !important;
 }
-.wfa_basinText{
+.car_basinText{
 	color:#FFF; background-color:#21658c; font-size: 23px; width: 66px;
 }
 
 /* wildlife check/radio button section */
-.wfa-wildlifeCheck{
+.car-wildlifeCheck{
 	font-size: 13px; margin-top: 16px; font-weight: 900; margin-left: 14px;
 }
-.wfa-wildlifeRadioButtons{
+.car-wildlifeRadioButtons{
 	display: flex; margin-left: 24px;
 }
-.wfa-prwCheck{
+.car-prwCheck{
 	margin-left: 24px; font-weight: 700;
 }
 
@@ -162,7 +162,7 @@ hr{
 	display: flex; align-items: center; margin: 0px !important; border-radius: 5px;
 	width: 100%; justify-content: center;
 }
-.wfa-sliderLabels{
+.car-sliderLabels{
 	padding: 5px;
 }
 .sliderDiv{
@@ -182,7 +182,7 @@ hr{
 }
 
 /* search widget styling ////////////////////////////////////////////////////////////////////////////////////////////////////*/
-.wfa-searchWidget{
+.car-searchWidget{
 	position: absolute; display: block; z-index: 1000; top:100px; left: 50px; background-color: grey !important;
 }
 /*.arcgisSearch{
@@ -191,7 +191,7 @@ hr{
 #dijit_layout_ContentPane_0search1 .arcgisSearch .searchBtn { 
 	margin-top: 15px;
 }
-.wfa-searchWrapper{
+.car-searchWrapper{
 	background-color: #457545; height: 50px; width: 350px; padding: 10px; margin: auto;
 }
 

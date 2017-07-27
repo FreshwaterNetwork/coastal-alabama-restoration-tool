@@ -30,14 +30,14 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				});	
 				// leave help button
 				$('#' + t.id + 'getHelpBtn').on('click', function(c){
-					$('#' + t.id + ' .wfa-wrap').show()
-					$('#' + t.id + ' .wfa-help').hide()
+					$('#' + t.id + ' .car-wrap').show()
+					$('#' + t.id + ' .car-help').hide()
 				})
 				// info icon clicks
 				$('#' + t.id + ' .infoIcon').on('click',function(c){
 					t.showHelp();
 					var ben = c.target.id.split("-").pop();
-					$('#' + t.id + 'getHelpBtn').html('Back to wfa Floodplain Explorer');
+					$('#' + t.id + 'getHelpBtn').html('Back to car Floodplain Explorer');
 					t.clicks.updateAccord(t);	
 					$('#' + t.id + 'infoAccord .' + ben).trigger('click');
 				});
@@ -52,31 +52,31 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				// tab button listener
 				$( "#" + t.id + "tabBtns input").on('click',function(c){
 					t.obj.active = c.target.value;
-					$.each($("#" + t.id + " .wfa-sections"),function(i,v){
+					$.each($("#" + t.id + " .car-sections"),function(i,v){
 						if (v.id != t.id + t.obj.active){
 							$("#"+ v.id).slideUp();
 						}else{
 							$("#"+ v.id).slideDown();
 						}
 					});
-					if(t.obj.active == 'wfa-showInfo' || t.obj.active == 'wfa-downloadData'){
-						$("#"+ t.id + 'wfa-mainContentWrap').slideUp();
+					if(t.obj.active == 'car-showInfo' || t.obj.active == 'car-downloadData'){
+						$("#"+ t.id + 'car-mainContentWrap').slideUp();
 					}
 				});
 // Checkboxes for radio buttons ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				// Set selected value text for button clicks
-				$( '#' + t.id + 'wfa-findEvalSiteToggle input' ).click(function(c){
+				$( '#' + t.id + 'car-findEvalSiteToggle input' ).click(function(c){
 					if (c.currentTarget.value == 'find'){
-						$( '#' + t.id + 'wfa-eval_WetlandWrap').slideUp()
-						$( '#' + t.id + 'wfa-find_WetlandWrap').slideDown()
+						$( '#' + t.id + 'car-eval_WetlandWrap').slideUp()
+						$( '#' + t.id + 'car-find_WetlandWrap').slideDown()
 
 					}else{
-						$( '#' + t.id + 'wfa-eval_WetlandWrap').slideDown()
-						$( '#' + t.id + 'wfa-find_WetlandWrap').slideUp()
+						$( '#' + t.id + 'car-eval_WetlandWrap').slideDown()
+						$( '#' + t.id + 'car-find_WetlandWrap').slideUp()
 					}
 				});
 // Radio button clicks //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-				$('.wfa-radio-indent input').on('click',function(c, x){
+				$('.car-radio-indent input').on('click',function(c, x){
 					t.obj.funcTracker = c.target.value.split("-")[0];
 					t.obj.wetTracker = c.target.value.split("-")[0];
 					// change the function site services text when radio buttons are clicked.
@@ -174,12 +174,12 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				if(t.obj.search == 'yes'){
 					var qt1 = new QueryTask(t.url + "/" + 4); // set qt1 let
 					t.obj.visibleLayers = [0,4,6,16]
-					$('#' + t.id + 'wfa-findASite').slideUp();
+					$('#' + t.id + 'car-findASite').slideUp();
 					$('#' + t.id + 'mainFuncWrapper').slideDown();
 					$('#' + t.id + 'hucSelWrap').slideDown();
 					$('#' + t.id + 'wildlifeCheckWrap').slideDown();
 					t.obj.wildlifeOpenTracker = 'open';
-					let zoomBtns = $('#' + t.id + 'hucSelWrap').find('.wfa-hucSelWrap');
+					let zoomBtns = $('#' + t.id + 'hucSelWrap').find('.car-hucSelWrap');
 					$.each(zoomBtns,function(i,v){
 						$(v).children().slideDown(); // slide down all the zoom buttons on search
 					});
@@ -224,7 +224,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 								hucQ.outFields = ["*"];
 								hucQT.execute(hucQ, function(evt){
 									// loop through zoom buttons and populate the name.
-									let zoomBtns = $('#' + t.id + 'hucSelWrap').find('.wfa-hucSelWrap');
+									let zoomBtns = $('#' + t.id + 'hucSelWrap').find('.car-hucSelWrap');
 									$.each(zoomBtns,function(i,v){
 										let idIndex = v.id.split('-')[1];
 										if(count == idIndex){
@@ -294,7 +294,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 								$('#' + t.id + t.obj.currentHuc + '-selText').parent().prev().children().slideDown();
 								$('#' + t.id + 'mainFuncWrapper').slideDown();
 								$('#' + t.id + 'hucSelWrap').slideDown();
-								$('#' + t.id + 'wfa-findASite').slideUp();
+								$('#' + t.id + 'car-findASite').slideUp();
 							}else{
 								// only slide down if its beyond the huc 6 level
 								$('#' + t.id + 'mainAttributeWrap').slideDown();
@@ -333,14 +333,14 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				// 	t.radAttVal = 'wet' // value should be what you want to slide up
 				// }
 				// attribute control //////////////////////////////
-				var attributes = $('#' + t.id + 'wfa-fas_AttributeWrap').find('.wfa-sum-wrap');
+				var attributes = $('#' + t.id + 'car-fas_AttributeWrap').find('.car-sum-wrap');
 				$.each(attributes,function(i,v){
 					if(t.obj.wetlandClick == 'yes'){
 						t.radAttVal = 'huc';
 					}else{
 						t.radAttVal = 'wet';
 					}
-					if($(v).data().wfaMode == t.radAttVal){
+					if($(v).data().carMode == t.radAttVal){
 						$(v).slideUp();
 					}else{
 						$(v).slideDown();
@@ -356,7 +356,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 					if(t.obj.currentHuc == 'WHUC12'){
 						t.radAttVal = 'huc'
 					}
-					if($(v).data().wfaMode == t.radAttVal){
+					if($(v).data().carMode == t.radAttVal){
 						$(v).slideUp();
 					}else{
 						$(v).slideDown();
@@ -371,7 +371,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 						$('#' + t.id).scrollTop(500) // force a scroll on hover so the user can see the attribute table on small screens
 						$('#' + t.id + 'watershedHoverText').hide();
 					}
-					let attributes = $('#' + t.id + 'wfa-fas_AttributeWrap').find('.elm-title');
+					let attributes = $('#' + t.id + 'car-fas_AttributeWrap').find('.elm-title');
 					let htmlVal;
 					let huc8Colors  = ['rgb(0,109,44)','rgb(44,162,95)', 'rgb(102,194,164)'];
 					let huc10Colors  = ['rgb(165,15,21)','rgb(222,45,38)', 'rgb(251,106,74)'];
@@ -379,7 +379,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 					$.each(attributes, function(i,v){
 						let attVal;
 						try {
-		   				    attVal = atts[$(v).data('wfa')];
+		   				    attVal = atts[$(v).data('car')];
 		   				} catch(err) {
 						    '';
 						}
@@ -392,11 +392,11 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 						}
 						let spanElem = $(v).next().find('.s2Atts').html(htmlVal);
 						if(t.obj.currentHuc == 'WHUC6'){
-							$(v).parent().find('.wfa-attributePatch').css('background-color', huc8Colors[(attVal-1)])
+							$(v).parent().find('.car-attributePatch').css('background-color', huc8Colors[(attVal-1)])
 						}else if(t.obj.currentHuc == 'WHUC8'){
-							$(v).parent().find('.wfa-attributePatch').css('background-color', huc10Colors[(attVal-1)])
+							$(v).parent().find('.car-attributePatch').css('background-color', huc10Colors[(attVal-1)])
 						}else if(t.obj.currentHuc == 'WHUC10'){
-							$(v).parent().find('.wfa-attributePatch').css('background-color', huc12Colors[(attVal-1)])
+							$(v).parent().find('.car-attributePatch').css('background-color', huc12Colors[(attVal-1)])
 						}
 					});
 				}else{
@@ -410,7 +410,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 			},
 			hucZoom: function(t){
 				// zoom buttons click //////////////////////////////////////////////////////////////////////////////////////////
-				$('.wfa-hucZoom').unbind().on('click',function(c){
+				$('.car-hucZoom').unbind().on('click',function(c){
 					var id = c.currentTarget.id.split('-')[1];
 					t.obj.wetlandWhere = "OBJECTID < 0" // reset wetland where tracker
 					// reset viz layers on zoom click 
@@ -422,7 +422,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 						$('#' + t.id + 'hucSelWrap').slideUp('400', function(){
 							t.clicks.hoverGraphic(t,1,t.where)
 						});
-						$('#' + t.id + 'wfa-findASite').slideDown();
+						$('#' + t.id + 'car-findASite').slideDown();
 						// slide up attribute wrapper when any zoom button is clicked.
 						// $('#' + t.id + 'mainAttributeWrap').slideUp();
 						$('#' + t.id + 'wildlifeCheckWrap').slideUp();
@@ -484,7 +484,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				});
 			},
 // keep the code below for now if we want to revert from hover attribute populate back to click. //////////////////////////////////////////////
-				// let attributes = $('#' + t.id + 'wfa-fas_AttributeWrap').find('.elm-title');
+				// let attributes = $('#' + t.id + 'car-fas_AttributeWrap').find('.elm-title');
 				// let htmlVal;
 				// let huc8Colors  = ['rgb(112,168,0)','rgb(170,204,102)', 'rgb(240,240,240)'];
 				// let huc10Colors  = ['rgb(196,10,10)','rgb(224,132,101)', 'rgb(255,235,214)'];
@@ -501,7 +501,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				// 	// the try catch statement below is used to remove the graphic layer. 
 				// 	let attVal;
 	 		// 		try {
-	   // 				    attVal = t.hucAttributesList[attTracker][$(v).data('wfa')];
+	   // 				    attVal = t.hucAttributesList[attTracker][$(v).data('car')];
 	   // 				} catch(err) {
 				// 	    '';
 				// 	}
@@ -514,11 +514,11 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				// 	}
 				// 	let spanElem = $(v).next().find('.s2Atts').html(htmlVal);
 				// 	if(t.obj.currentHuc == 'WHUC8'){
-				// 		$(v).parent().find('.wfa-attributePatch').css('background-color', huc8Colors[(attVal-1)])
+				// 		$(v).parent().find('.car-attributePatch').css('background-color', huc8Colors[(attVal-1)])
 				// 	}else if(t.obj.currentHuc == 'WHUC10'){
-				// 		$(v).parent().find('.wfa-attributePatch').css('background-color', huc10Colors[(attVal-1)])
+				// 		$(v).parent().find('.car-attributePatch').css('background-color', huc10Colors[(attVal-1)])
 				// 	}else if(t.obj.currentHuc == 'WHUC12'){
-				// 		$(v).parent().find('.wfa-attributePatch').css('background-color', huc12Colors[(attVal-1)])
+				// 		$(v).parent().find('.car-attributePatch').css('background-color', huc12Colors[(attVal-1)])
 				// 	}
 				// });
 // search box function for main search area /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -588,10 +588,10 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 						var potColors = ['rgb(254,229,217)', 'rgb(165,15,21)','rgb(222,45,38)','rgb(251,106,74)'];
 						var atts = evt.features[0].attributes;
 						// update the attribute colors for wetlands
-						var title = $('#' + t.id + 'wfa-fas_AttributeWrap').find('.elm-title');
+						var title = $('#' + t.id + 'car-fas_AttributeWrap').find('.elm-title');
 						var htmlVal;
 						$.each(title, function(i,v){
-							let attVal = atts[$(v).data('wfa')];
+							let attVal = atts[$(v).data('car')];
 							if(attVal == 0){
 								htmlVal = 'Not Applicable'
 								t.countVal = '0';
@@ -610,9 +610,9 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 								t.countValue = $('#' + t.id + 'countOptionText').html(t.countVal);
 							}
 							if(atts.WETLAND_TYPE == 'WWI'){
-								$(v).parent().find('.wfa-attributePatch').css('background-color', curColors[attVal])
+								$(v).parent().find('.car-attributePatch').css('background-color', curColors[attVal])
 							}else{
-								$(v).parent().find('.wfa-attributePatch').css('background-color', potColors[attVal])
+								$(v).parent().find('.car-attributePatch').css('background-color', potColors[attVal])
 							}
 						});
 						// set the wetland where clause
@@ -752,7 +752,7 @@ function ( declare, Query, QueryTask,FeatureLayer, Search, SimpleLineSymbol, Sim
 				var radioBtns = $('#' + t.id + 'funcWrapper').find('input');
 				$.each(radioBtns,function(i,v){
 					if(v.checked){
-						let data = $(v).parent().data().wfaMode
+						let data = $(v).parent().data().carMode
 						if(data == 'both'){
 							'do nothing'
 						}else if(data == 'huc'){
